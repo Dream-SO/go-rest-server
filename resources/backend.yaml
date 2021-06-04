@@ -1,0 +1,40 @@
+---
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Hospital server
+  contact:
+    name: "DreamSO"
+    url: "http://wso2.com/products/api-manager/"
+    email: "dreamsocom@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+
+
+basePath: /api/hospital/v2
+
+
+######################################################
+# The Hospital resource APIs
+######################################################
+
+
+paths:
+  /hello:
+    get:
+      produces:
+        - text/plain
+      parameters:
+        - name: name
+          required: false
+          type: string
+          in: query
+          description: defaults to World if not given
+      operationId: getGreeting
+      responses:
+        200:
+          description: returns a greeting
+          schema:
+              type: string
+              description: contains the actual greeting as plain text
